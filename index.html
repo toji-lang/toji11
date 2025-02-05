@@ -3,38 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Special Question for You</title>
+    <title>Will You Go on a Date with Me, Aya?</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f8f9fa;
             margin: 50px;
         }
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
+            margin-top: 100px;
         }
-        h1 {
-            color: #333;
-        }
-        .btn {
+        .button {
             font-size: 20px;
             padding: 10px 20px;
             margin: 10px;
-            border: none;
             cursor: pointer;
+            border: none;
             border-radius: 5px;
         }
         .yes {
-            background-color: #28a745;
+            background-color: #4CAF50;
             color: white;
         }
         .no {
-            background-color: #dc3545;
+            background-color: #f44336;
             color: white;
             position: absolute;
         }
@@ -42,19 +34,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>Hey [aya],</h1>
-        <p>Would you like to go on a date with me? 🥰</p>
-        <button class="btn yes" onclick="alert('Yay! Can’t wait! 🥳')">Yes</button>
-        <button class="btn no" onmouseover="moveButton()">No</button>
+        <h1>Hey Aya, will you go on a date with me? 😊</h1>
+        <button class="button yes" onclick="alert('Yay! I can’t wait! ❤️')">Yes</button>
+        <button class="button no" id="noButton">No</button>
     </div>
 
     <script>
-        function moveButton() {
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
-            document.querySelector('.no').style.left = x + 'px';
-            document.querySelector('.no').style.top = y + 'px';
-        }
+        document.getElementById("noButton").addEventListener("mouseover", function() {
+            let x = Math.random() * window.innerWidth - 100;
+            let y = Math.random() * window.innerHeight - 50;
+            this.style.left = `${x}px`;
+            this.style.top = `${y}px`;
+        });
     </script>
 </body>
 </html>
